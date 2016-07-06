@@ -3,7 +3,7 @@
   "docstatus": 0, 
   "doctype": "Custom Script", 
   "dt": "Sales Order", 
-  "modified": "2016-07-06 03:20:45.747180", 
+  "modified": "2016-07-06 06:50:56.708746", 
   "name": "Sales Order-Client", 
   "script": "frappe.ui.form.on(\"Sales Order\", \"onload\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: {\n\t\t\t\"company\": frm.doc.company\n\t\t}\n         }\n    });\n});", 
   "script_type": "Client"
