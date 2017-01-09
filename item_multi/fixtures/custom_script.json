@@ -3,9 +3,63 @@
   "docstatus": 0, 
   "doctype": "Custom Script", 
   "dt": "Sales Order", 
-  "modified": "2016-07-06 06:50:56.708746", 
+  "modified": "2017-01-09 10:30:09.810959", 
   "name": "Sales Order-Client", 
-  "script": "frappe.ui.form.on(\"Sales Order\", \"onload\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: {\n\t\t\t\"company\": frm.doc.company\n\t\t}\n         }\n    });\n});", 
+  "script": "frappe.ui.form.on(\"Sales Order\", \"refresh\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: [\n\t\t\t[\"company\", \"=\", frm.doc.company],\n\t\t\t['is_sales_item', '=', '1']\n\t\t]\n         }\n    });\n});\n", 
+  "script_type": "Client"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Custom Script", 
+  "dt": "Quotation", 
+  "modified": "2017-01-09 10:34:31.501494", 
+  "name": "Quotation-Client", 
+  "script": "frappe.ui.form.on(\"Quotation\", \"refresh\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: [\n\t\t\t[\"company\", \"=\", frm.doc.company],\n\t\t\t['is_sales_item', '=', '1']\n\t\t]\n         }\n    });\n});\n", 
+  "script_type": "Client"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Custom Script", 
+  "dt": "Sales Invoice", 
+  "modified": "2017-01-09 10:36:47.600777", 
+  "name": "Sales Invoice-Client", 
+  "script": "frappe.ui.form.on(\"Sales Invoice\", \"refresh\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: [\n\t\t\t[\"company\", \"=\", frm.doc.company],\n\t\t\t['is_sales_item', '=', '1']\n\t\t]\n         }\n    });\n});\n", 
+  "script_type": "Client"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Custom Script", 
+  "dt": "Purchase Order", 
+  "modified": "2017-01-09 10:43:52.260388", 
+  "name": "Purchase Order-Client", 
+  "script": "frappe.ui.form.on(\"Purchase Order\", \"refresh\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: [\n\t\t\t[\"company\", \"=\", frm.doc.company],\n\t\t\t['is_purchase_item', '=', '1']\n\t\t]\n         }\n    });\n});\n", 
+  "script_type": "Client"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Custom Script", 
+  "dt": "Request for Quotation", 
+  "modified": "2017-01-09 10:53:12.782088", 
+  "name": "Request for Quotation-Client", 
+  "script": "frappe.ui.form.on(\"Request for Quotation\", \"refresh\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: [\n\t\t\t[\"company\", \"=\", frm.doc.company],\n\t\t\t['is_purchase_item', '=', '1']\n\t\t]\n         }\n    });\n});\n", 
+  "script_type": "Client"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Custom Script", 
+  "dt": "Supplier Quotation", 
+  "modified": "2017-01-09 10:53:52.164791", 
+  "name": "Supplier Quotation-Client", 
+  "script": "frappe.ui.form.on(\"Supplier Quotation\", \"refresh\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: [\n\t\t\t[\"company\", \"=\", frm.doc.company],\n\t\t\t['is_purchase_item', '=', '1']\n\t\t]\n         }\n    });\n});\n", 
+  "script_type": "Client"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Custom Script", 
+  "dt": "Purchase Invoice", 
+  "modified": "2017-01-09 10:54:53.187779", 
+  "name": "Purchase Invoice-Client", 
+  "script": "frappe.ui.form.on(\"Purchase Invoice\", \"refresh\", function (frm, cdt, cdn) {\n    frm.set_query(\"item_code\", \"items\", function () {\n         return{\n\t\tfilters: [\n\t\t\t[\"company\", \"=\", frm.doc.company],\n\t\t\t['is_purchase_item', '=', '1']\n\t\t]\n         }\n    });\n});\n", 
   "script_type": "Client"
  }
 ]
